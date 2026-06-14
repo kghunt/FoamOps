@@ -2,6 +2,8 @@
 
 A Nerf game operations prop built on the ESP32 Cheap Yellow Display (CYD). Plug it in, pick a game mode, and play. No phone, no laptop, no setup on the field.
 
+![Game Mode Selector](docs/Photos/PXL_20260614_123333036.jpg)
+
 ## Flash It
 
 The easiest way to get FoamOps onto your CYD is via the web flasher — no Arduino IDE needed.
@@ -21,7 +23,7 @@ The easiest way to get FoamOps onto your CYD is via the web flasher — no Ardui
 
 ## Required Hardware
 
-- **ESP32-2432S028R** — the Cheap Yellow Display (CYD), 2.8" ILI9341 touchscreen
+- **ESP32-2432S028R** — the Cheap Yellow Display (CYD), 2.8" ILI9341 touchscreen — [buy on Amazon UK](https://www.amazon.co.uk/dp/B0CQX9Q68P?ref=ppx_yo2ov_dt_b_fed_asin_title)
 - **USB-C cable** for flashing
 - **3W 4Ω JST speaker** (optional) — for sound effects. Connects to the JST port on the board
 - **Power** — 18650 battery or USB power bank recommended for field use
@@ -33,6 +35,10 @@ The easiest way to get FoamOps onto your CYD is via the web flasher — no Ardui
 ### Flux — Two-Team Domination Timer
 
 Two teams, two timers. Tap your team's side of the screen to start your timer running — the other team's timer freezes. First team to run down the game clock wins.
+
+![Flux colour picker](docs/Photos/PXL_20260614_123337490.jpg)
+![Game timer picker](docs/Photos/PXL_20260614_123342654.MP.jpg)
+![Flux playing](docs/Photos/PXL_20260614_123346486.jpg)
 
 **Controls:**
 - Tap left or right half → that team's timer runs, other pauses
@@ -49,6 +55,9 @@ Two teams, two timers. Tap your team's side of the screen to start your timer ru
 
 A bomb is set with a countdown timer. Players must defuse it before it reaches zero or it explodes. Two defuse puzzle types available.
 
+![Bomb timer picker](docs/Photos/PXL_20260614_123354985.jpg)
+![Bomb armed and ready](docs/Photos/PXL_20260614_123407639.MP.jpg)
+
 **Controls:**
 - Hold 1.5 s on the armed bomb screen → starts the countdown
 - Tap screen during countdown → opens defuse puzzle
@@ -57,6 +66,9 @@ A bomb is set with a countdown timer. Players must defuse it before it reaches z
 **Code puzzle:** A 4-dial combination lock. Players must set all four dials to the correct values and tap CONFIRM. Wrong code resets the dials. No attempts are shown to defenders.
 
 **Wire puzzle:** Game master pre-selects the correct wire colour (Red, Blue, Green, or Yellow) in setup. Players tap one wire to cut it — correct wire defuses the bomb, wrong wire triggers immediate detonation.
+
+![Game master wire picker](docs/Photos/PXL_20260614_123402425.MP.jpg)
+![Wire defuse running](docs/Photos/PXL_20260614_123414489.MP.jpg)
 
 **Setup options:**
 - Bomb timer: 5, 10, 15, or 20 minutes
@@ -73,6 +85,8 @@ A bomb is set with a countdown timer. Players must defuse it before it reaches z
 
 Inspired by Helldivers 2. Players who are out must enter a random 4-direction arrow sequence correctly to respawn. Gets the dead players doing something rather than just waiting.
 
+![HD2 Spawn screen](docs/Photos/PXL_20260614_123424939.jpg)
+
 **Controls:**
 - Tap the correct arrow direction in sequence (↑ ↓ ← →)
 - Wrong input → error flash, sequence resets
@@ -85,6 +99,8 @@ A new random sequence is generated each time.
 ### Spawn Count — Life Tracking
 
 Track remaining lives for a team. Can count up (adding lives) or count down (losing lives). Colour-coded display shows how close to elimination the team is.
+
+![Spawn count screen](docs/Photos/PXL_20260614_123443978.jpg)
 
 **Countdown colours:**
 - Green → above 75% lives remaining
@@ -102,6 +118,8 @@ Track remaining lives for a team. Can count up (adding lives) or count down (los
 ### Respawn Waves — Timed Wave Respawns
 
 A looping countdown timer. When it hits zero, **RESPAWN** flashes on screen and the speaker fires — all dead players respawn simultaneously. Then the timer resets and counts down again.
+
+![Respawn waves screen](docs/Photos/PXL_20260614_123434323.jpg)
 
 **Controls:**
 - Timer runs automatically once started
@@ -146,4 +164,3 @@ The onboard RGB LED gives a quick visual status visible from a distance:
 | Spawn Count — zero lives | Red |
 | Respawn Waves — counting | Blue |
 | Respawn Waves — RESPAWN! | Green |
-
