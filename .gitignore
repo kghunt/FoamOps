@@ -7,6 +7,9 @@ build/
 # Session notes
 old claude.txt
 
+# Claude Code
+.claude/
+
 # Windows
 Thumbs.db
 Desktop.ini
