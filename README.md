@@ -6,7 +6,7 @@ A Nerf game operations prop built on the ESP32 Cheap Yellow Display (CYD). Plug 
 
 The easiest way to get FoamOps onto your CYD is via the web flasher — no Arduino IDE needed.
 
-**[Open Web Flasher →](https://kghunt.github.io/foamops)**
+**[Open Web Flasher →](https://kghunt.github.io/FoamOps/)**
 
 1. Connect your CYD to your PC via USB
 2. Open the link above in Chrome or Edge (other browsers not supported)
