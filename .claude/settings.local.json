@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(arduino-cli compile --fqbn esp32:esp32:esp32 \"C:\\\\Users\\\\karlg\\\\Documents\\\\Arduino\\\\Domination\" 2>&1)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(where python *)",
+      "Bash(where python3 *)",
+      "Bash(where node *)",
+      "Bash(where npm *)",
+      "Bash(where pwsh *)",
+      "Bash(powershell -Command \"Get-Command node,npm,npx -ErrorAction SilentlyContinue | Select-Object Name,Source\")"
+    ]
+  }
+}

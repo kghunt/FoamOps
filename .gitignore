@@ -1,0 +1,12 @@
+# Arduino source
+*.ino
+
+# Build artifacts
+build/
+
+# Session notes
+old claude.txt
+
+# Windows
+Thumbs.db
+Desktop.ini

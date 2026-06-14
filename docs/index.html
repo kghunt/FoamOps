@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoamOps — Flash Tool</title>
+  <script type="module" src="https://unpkg.com/esp-web-tools@9/dist/web/install-button.js?module"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, #f97316, #ef4444);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    header p {
+      color: #8b949e;
+      font-size: 1.1rem;
+      margin-top: 8px;
+    }
+
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 32px;
+      max-width: 560px;
+      width: 100%;
+      margin-bottom: 24px;
+    }
+
+    .card h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #e6edf3;
+    }
+
+    .flash-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      padding: 24px 0;
+    }
+
+    .flash-section p {
+      color: #8b949e;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    esp-web-install-button::part(button) {
+      background: linear-gradient(135deg, #f97316, #ef4444);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    esp-web-install-button::part(button):hover {
+      opacity: 0.85;
+    }
+
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .steps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 0.95rem;
+      color: #c9d1d9;
+      line-height: 1.5;
+    }
+
+    .steps li::before {
+      counter-increment: step;
+      content: counter(step);
+      background: #f97316;
+      color: white;
+      font-weight: 700;
+      font-size: 0.8rem;
+      min-width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .modes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .mode-chip {
+      background: #21262d;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+    }
+
+    .mode-chip strong {
+      display: block;
+      color: #f97316;
+      margin-bottom: 2px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .mode-chip span {
+      color: #8b949e;
+    }
+
+    .hardware-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .hardware-list li {
+      color: #c9d1d9;
+      font-size: 0.9rem;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .hardware-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #f97316;
+    }
+
+    .notice {
+      background: #1c2128;
+      border: 1px solid #30363d;
+      border-left: 3px solid #f97316;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-size: 0.85rem;
+      color: #8b949e;
+      margin-top: 16px;
+    }
+
+    footer {
+      margin-top: 48px;
+      color: #484f58;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: #f97316;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>FoamOps</h1>
+    <p>ESP32 Cheap Yellow Display game prop firmware</p>
+  </header>
+
+  <div class="card">
+    <h2>Flash Firmware</h2>
+    <div class="flash-section">
+      <esp-web-install-button manifest="manifest.json"></esp-web-install-button>
+      <p>Requires Chrome or Edge on desktop. Connect your CYD via USB before clicking.</p>
+    </div>
+    <ol class="steps">
+      <li>Connect your CYD (ESP32-2432S028R) to your PC via USB</li>
+      <li>Click <strong>Install FoamOps</strong> above</li>
+      <li>Select the correct COM port when prompted</li>
+      <li>Wait for flashing to complete (~30 seconds)</li>
+      <li>The device will reboot automatically into the game mode selector</li>
+    </ol>
+    <div class="notice">
+      First-time flash will erase existing firmware. Settings (brightness, sound, display invert) are saved to the device after first configuration.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Game Modes</h2>
+    <div class="modes-grid">
+      <div class="mode-chip">
+        <strong>Flux</strong>
+        <span>Two-team domination timer. Tap your team colour to capture.</span>
+      </div>
+      <div class="mode-chip">
+        <strong>Defuse</strong>
+        <span>Bomb countdown with code or wire cut puzzle to defuse.</span>
+      </div>
+      <div class="mode-chip">
+        <strong>HD2 Spawn</strong>
+        <span>Helldivers-style stratagem sequence for respawn gate.</span>
+      </div>
+      <div class="mode-chip">
+        <strong>Spawn Count</strong>
+        <span>Track team lives. Count up or count down from a set number.</span>
+      </div>
+      <div class="mode-chip">
+        <strong>Respawn Waves</strong>
+        <span>Looping wave timer. Shows RESPAWN when the wave hits zero.</span>
+      </div>
+      <div class="mode-chip">
+        <strong>Settings</strong>
+        <span>Brightness, sound, display invert, ESP-NOW and board MAC.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Required Hardware</h2>
+    <ul class="hardware-list">
+      <li>ESP32-2432S028R (Cheap Yellow Display / CYD)</li>
+      <li>USB-C cable for flashing</li>
+      <li>3W 4Ω JST speaker (optional, for sound effects)</li>
+      <li>Battery — single 18650 or USB power bank recommended</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>
+      <a href="https://github.com/kghunt/foamops">github.com/kghunt/foamops</a>
+      &nbsp;·&nbsp;
+      Built for Nerf &amp; airsoft skirmish props
+    </p>
+  </footer>
+
+</body>
+</html>
