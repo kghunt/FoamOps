@@ -147,16 +147,3 @@ The onboard RGB LED gives a quick visual status visible from a distance:
 | Respawn Waves — counting | Blue |
 | Respawn Waves — RESPAWN! | Green |
 
----
-
-## Building from Source
-
-Requires Arduino IDE 2.x or PlatformIO with the ESP32 Arduino core.
-
-**Libraries needed:**
-- TFT_eSPI
-- XPT2046_Touchscreen
-
-Configure `TFT_eSPI` for the CYD (`ESP32_2432S028R`) before compiling — set the correct user setup file in the library config.
-
-Speaker is on GPIO 26 (PWM via LEDC). Backlight is on GPIO 21. Some CYD variants use GPIO 27 for the speaker — change `SPEAKER_PIN` in the sketch if there's no sound.
