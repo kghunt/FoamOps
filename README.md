@@ -14,8 +14,9 @@ The easiest way to get FoamOps onto your CYD is via the web flasher — no Ardui
 2. Open the link above in Chrome or Edge (other browsers not supported)
 3. Click **Install FoamOps**
 4. Select your COM port when prompted
-5. Wait ~30 seconds for flashing to complete
-6. The device reboots automatically into the game mode selector
+5. **Hold the BOOT button** on the back of the board until the progress bar starts moving — the screen may flash on and off until you do
+6. Release BOOT and wait ~30 seconds for flashing to complete
+7. The device reboots automatically into the game mode selector
 
 > First-time flash will erase existing firmware. Settings (brightness, sound, display invert) are saved to the device after first configuration.
 
