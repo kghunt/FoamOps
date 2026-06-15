@@ -2,7 +2,7 @@
 
 A Nerf game operations prop built on the ESP32 Cheap Yellow Display (CYD). Plug it in, pick a game mode, and play. No phone, no laptop, no setup on the field.
 
-![Game Mode Selector](docs/Photos/PXL_20260614_123333036.jpg)
+![Game Mode Selector](docs/Photos/PXL_20260615_220159306.jpg)
 
 ## Flash It
 
@@ -43,7 +43,7 @@ Two teams, two timers. Tap your team's side of the screen to start your timer ru
 **Controls:**
 - Tap left or right half → that team's timer runs, other pauses
 - Hold 1.5 s → pause game
-- Hold 3 s → reset both timers to zero
+- Hold top-left corner → return to mode select (use this to reset)
 
 **Setup options:**
 - Choose team colours for each side (Red, Green, Blue, Orange, Yellow, Purple)
@@ -57,11 +57,13 @@ A bomb is set with a countdown timer. Players must defuse it before it reaches z
 
 ![Bomb timer picker](docs/Photos/PXL_20260614_123354985.jpg)
 ![Bomb armed and ready](docs/Photos/PXL_20260614_123407639.MP.jpg)
+![Code defuse puzzle](docs/Photos/PXL_20260615_220232447.jpg)
 
 **Controls:**
 - Hold 1.5 s on the armed bomb screen → starts the countdown
 - Tap screen during countdown → opens defuse puzzle
 - Bomb reaches zero → **BOOM**
+- Hold top-left corner on the result screen → return to mode select
 
 **Code puzzle:** A 4-dial combination lock. Players must set all four dials to the correct values and tap CONFIRM. Wrong code resets the dials. No attempts are shown to defenders.
 
@@ -78,6 +80,14 @@ A bomb is set with a countdown timer. Players must defuse it before it reaches z
 - Every 30 s while armed — helps players locate a hidden bomb
 - Every 5 s in the last 60 s
 - Every 1 s in the last 10 s
+
+---
+
+### Spawn
+
+Tapping **SPAWN** on the main menu opens a sub-menu with three respawn game modes.
+
+![Spawn sub-menu](docs/Photos/PXL_20260615_220247453.jpg)
 
 ---
 
@@ -134,15 +144,34 @@ A looping countdown timer. When it hits zero, **RESPAWN** flashes on screen and 
 
 Accessed from the main mode selector.
 
+![Settings screen](docs/Photos/PXL_20260615_220213931.jpg)
+
 | Setting | Options |
 |---|---|
 | Display Invert | ON / OFF — corrects colours for some CYD variants |
 | Sound | ON / OFF — enables/disables all speaker output |
 | Brightness | 25% / 50% / 75% / MAX — PWM backlight control |
-| ESP-NOW | ON / OFF — enables wireless sync between boards |
-| Board MAC | Shows this device's MAC address for ESP-NOW pairing |
+| LED Invert | ON / OFF — swaps green/blue LED channels for boards with reversed wiring |
+| ESP-NOW | ON / OFF toggle + opens the ESP-NOW settings page (device pairing) |
 
-All settings are saved to flash and persist across reboots.
+The firmware version is shown at the bottom of the settings screen. All settings are saved to flash and persist across reboots.
+
+#### ESP-NOW Settings
+
+Tapping the ESP-NOW button opens a dedicated page where you can:
+- Toggle ESP-NOW on or off
+- View this device's MAC address
+- Ping to search for other FoamOps devices in range
+- Pair discovered devices
+- View already-paired devices and unpair them individually
+
+#### Master Mode
+
+Tapping **MASTER MODE** from the main menu lets you remotely control all paired devices:
+- Select the game mode to run across all devices
+- Send START / STOP to all paired devices simultaneously
+- Push game configuration (colours, time limits) to remotes
+- See online/offline status of each paired device
 
 ---
 
